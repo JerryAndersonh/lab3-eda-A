@@ -41,4 +41,36 @@ public class Lista<T> {
         }
         return false;
     }
+
+    public boolean contains(T data) {
+        Node<T> current = root;
+        while (current != null) {
+            if (current.getData().equals(data)) {
+                return true;
+            }
+            current = current.getNextNode();
+        }
+        return false;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public void clear() {
+        root = null;
+        size = 0;
+    }
+
+    public void printList() {
+        Node<T> current = root;
+        while (current != null) {
+            System.out.println(current.getData());
+            current = current.getNextNode();
+        }
+    }
 }
