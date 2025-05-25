@@ -103,3 +103,29 @@ public class Main {
 
         scanner.close();
     }
+
+    // Método auxiliar para ejecutar la operación
+    private static <T extends Number> void ejecutarOperacion(int opcion, T v1, T v2) {
+        switch (opcion) {
+            case 1:
+                System.out.println("Resultado: " + suma(v1, v2));
+                break;
+            case 2:
+                System.out.println("Resultado: " + resta(v1, v2));
+                break;
+            case 3:
+                System.out.println("Resultado: " + producto(v1, v2));
+                break;
+            case 4:
+                try {
+                    System.out.println("Resultado: " + division(v1, v2));
+                } catch (ArithmeticException e) {
+                    System.out.println("Error: " + e.getMessage());
+                }
+                break;
+            case 5:
+                System.out.println("Resultado: " + potencia(v1, v2));
+                break;
+        }
+    }
+}
