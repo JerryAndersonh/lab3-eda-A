@@ -20,4 +20,25 @@ public class Lista<T> {
         }
         size++;
     }
+
+    public boolean remove(T data) {
+        if (root == null) return false;
+
+        if (root.getData().equals(data)) {
+            root = root.getNextNode();
+            size--;
+            return true;
+        }
+
+        Node<T> current = root;
+        while (current.getNextNode() != null) {
+            if (current.getNextNode().getData().equals(data)) {
+                current.setNextNode(current.getNextNode().getNextNode());
+                size--;
+                return true;
+            }
+            current = current.getNextNode();
+        }
+        return false;
+    }
 }
